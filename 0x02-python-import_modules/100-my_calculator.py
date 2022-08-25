@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from sys import argv
-from calculator_1 import addition, subtraction, multiplication, division
+from calculator_1 import add, sub, mul, div
 if __name__ != "__main__":
     exit()
 
@@ -9,13 +9,13 @@ if argc != 3:
     print("Usage: {:s} <a> <operator> <b>".format(argv[0]))
     exit(1)
 elif argv[2] == '+':
-    func = addition
+    func = add
 elif argv[2] == '-':
-    func = subtraction
+    func = sub
 elif argv[2] == '*':
-    func = multiplication
+    func = mul
 elif argv[2] == '/':
-    func = division
+    func = div
 else:
     print("Unknown operator. Available operators: +, -, *, and /")
     exit(1)
