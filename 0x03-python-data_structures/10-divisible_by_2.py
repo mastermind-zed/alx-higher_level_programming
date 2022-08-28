@@ -2,13 +2,9 @@
 
 def max_integer(my_list=[]):
     """ function that finds all multiples of 2 in a list """
-
-    new_list = []
-    for number in my_list:
-        if (number % 2) == 0:
-            new_list.append(True)
-
-        else:
-            new_list.append(False)
     
-    return(new_list)
+    if len(my_list) == 0:
+        return (None)
+    my_list.sort()
+    
+    return (my_list[-1])
