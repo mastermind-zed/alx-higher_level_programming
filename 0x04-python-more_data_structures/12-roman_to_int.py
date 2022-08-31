@@ -1,5 +1,23 @@
 #!/usr/bin/python3
 
+def convert_roman(ch):
+    ret = -1
+    if ch == 'I':
+        ret = 1
+    elif ch == 'V':
+        ret = 5
+    elif ch == 'X':
+        ret = 10
+    elif ch == 'L':
+        ret = 50
+    elif ch == 'C':
+        ret = 100
+    elif ch == 'D':
+        ret = 500
+    elif ch == 'M':
+        ret = 1000
+    return ret
+
 def roman_to_int(roman_string):
     cur_max = -1
     cur = conv = 0
@@ -33,21 +51,3 @@ def roman_to_int(roman_string):
     if len(holder) != 0:
         conv += sum(holder)
     return conv
-
-def convert_roman(ch):
-    ret = -1
-    if ch == 'I':
-        ret = 1
-    elif ch == 'V':
-        ret = 5
-    elif ch == 'X':
-        ret = 10
-    elif ch == 'L':
-        ret = 50
-    elif ch == 'C':
-        ret = 100
-    elif ch == 'D':
-        ret = 500
-    elif ch == 'M':
-        ret = 1000
-    return ret
