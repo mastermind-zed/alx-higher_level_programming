@@ -18,12 +18,20 @@ class Sqaure:
 
     @property
     def size(self):
-        """ lenght of sides of the square """
+        """ lenght of sides of the square
+            Returns:
+                size
+        """
         return self.__size
 
     @size.setter
      def size(self, value):
-         """ funtion for private attribute size """
+         """ funtion for private attribute size
+             Args:
+                 value: value to be set.
+             Returns: 
+                 Nothing
+        """
          if (type(size) is not int):
             raise TypeError("size must be an integer")
         elif (size < 0):
