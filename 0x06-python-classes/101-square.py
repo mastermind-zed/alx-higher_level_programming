@@ -2,93 +2,64 @@
 """ Square that defines a square by: (based on 6-square.py) """
 
 
-class Square: 
+
+class Square:
     """ defining square """
     def __init__(self, size=0, position=(0, 0)):
+        """ Instantiate a 'Square'
         """
-                Instantiation with size
-        Args:
-            size: size of the square
-            position: postion of the square
-        """
-        if type(size) is not int:
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = size
-        self.position = position
+        self.size, self.position = size, position
 
-    def area(self):
+    def __str__(self):
+        """ Create a visual representation of a square
         """
-        Returns the area of the square
-        """
-        return (self.__size * self.__size)
+        if self.size:
+            return '\n' * self.position[1] + '\n'.join(
+                [' ' * self.position[0] + '#' * self.size] * self.size
+            )
+        return str()
 
     @property
     def size(self):
-        """
-        size getter. Handle size errors
+        """ Get the size of a square
         """
         return self.__size
 
     @size.setter
-    def size(self, value):
+    def size(self, size):
+        """ Set the size of a square
         """
-        size setter. Set the size square
-        """
-        if type(value) is not int:
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
-        if value < 0:
+        if size < 0:
             raise ValueError("size must be >= 0")
-        self.__size = value
-
-    def my_print(self):
-        """
-        Print a square with the character # at position given
-        """
-        if self.__size == 0:
-            print()
-            return
-        for j in range(self.__position[1]):
-            print()
-        for i in range(self.__size):
-            print(" " * self.__position[0], end="")
-            print("#" * self.__size)
+        self.__size = size
 
     @property
     def position(self):
-        """
-        position setter. Set the position of square
+        """ Get the position of a square
         """
         return self.__position
 
     @position.setter
-    def position(self, value):
+    def position(self, position):
+        """ Set the position of a square
         """
-        Handle position with errors
-        """
-        if type(value) != tuple:
+        if not (isinstance(position, tuple) and
+                len(position) == 2 and
+                isinstance(position[0], int) and
+                isinstance(position[1], int) and
+                position[0] >= 0 and
+                position[1] >= 0):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif len(value) != 2:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        elif isinstance(value[0], int) is False:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        elif isinstance(value[1], int) is False:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        elif value[0] < 0 or value[1] < 0:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = value
+        self.__position = position
 
-    def __str__(self):
-        self.my_list = []
-        if self.__size == 0:
-            return ""
-        for j in range(self.__position[1]):
-            self.my_list.append("\n")
-        for i in range(self.__size):
-            self.my_list.append(" " * self.__position[0])
-            self.my_list.append("#" * self.__size)
-            if (i < self.__size - 1):
-                self.my_list.append("\n")
-        return "".join(self.my_list)
+    def area(self):
+        """ Compute the area of a 'Square'
+        """
+        return self.size ** 2
+
+    def my_print(self):
+        """ Print a visual representation of a square
+        """
+        print(self)
