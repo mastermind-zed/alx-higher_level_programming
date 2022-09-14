@@ -5,7 +5,6 @@ import math
 
 class MagicClass:
     """ circle """
-
     def __init__(self, radius=0):
         """Disassembly of __init__"""
         self.__radius = 0
