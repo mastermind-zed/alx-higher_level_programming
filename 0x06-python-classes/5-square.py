@@ -4,10 +4,9 @@
 
 class Square:
     """ defining a sqaure """
-  
-  def __init__(self, size=0):
+   def __init__(self, size=0):
         """
-        initialization function for our square clasee
+        initialization function for our square class
         """
         if self.__validate_size(size):
             self.__size = size
@@ -35,7 +34,7 @@ class Square:
 
     def my_print(self):
         """
-            prints the square with character #
+        prints the square with character #
         """
         if self.__size == 0:
             print()
