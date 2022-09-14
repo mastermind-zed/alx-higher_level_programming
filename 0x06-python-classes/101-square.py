@@ -2,7 +2,6 @@
 """ Square that defines a square by: (based on 6-square.py) """
 
 
-
 class Square: 
     """ defining square """
     def __init__(self, size=0, position=(0, 0)):
