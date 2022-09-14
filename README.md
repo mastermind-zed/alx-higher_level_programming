@@ -1,4 +1,4 @@
-# Holberton School High-level Programming :computer:
+# ALX High-level Programming :computer:
 
 ## Description
 ALX's curriculum for high-level programming. These projects are meant to help us learn how to use and apply the basic fundamental concepts from [low-level programming](./https://github.com/mastermind-zed/alx-low_level_programming) on a different programming language.
