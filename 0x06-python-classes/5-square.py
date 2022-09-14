@@ -3,18 +3,22 @@
 
 
 class Square:
-    """ defining a sqaure """
-   def __init__(self, size=0):
+    """
+    class square that has attributes:
+        size
+    some attributes are protected from input.
+    """
+    def __init__(self, size=0):
         """
-        initialization function for our square class
+        initialization function for our square clasee
         """
         if self.__validate_size(size):
             self.__size = size
 
     @property
     def size(self):
-        """ 
-        getter function for private attribute size.
+        """
+        getter for the size property
         """
         return self.__size
 
@@ -28,13 +32,13 @@ class Square:
 
     def area(self):
         """
-        area of the square.
+             area of the square.
         """
         return self.__size * self.__size
 
     def my_print(self):
         """
-        prints the square with character #
+            prints the square with character #
         """
         if self.__size == 0:
             print()
@@ -45,7 +49,7 @@ class Square:
                     print("#", end="")
                 print()
 
-    def __validate_size(self, size):
+     def __validate_size(self, size):
         """
         validates the size, checking for errors
         """
@@ -56,4 +60,3 @@ class Square:
         else:
             return True
         return False
-    
