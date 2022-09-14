@@ -3,58 +3,43 @@
 
 
 class Square:
-    """
-    class square that has attributes:
-        size
-    some attributes are protected from input.
-    """
+    """Represents an empty square"""
     def __init__(self, size=0):
         """
-        initialization function for our square clasee
+        Init class with args: size
+        runs a check to ensure size data is correct type and value.
         """
-        if self.__validate_size(size):
+        if type(size) != int:
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+        else:
             self.__size = size
+
+    def area(self):
+        """Method function to return the 'area' of the Square"""
+        return (self.__size * self.__size)
 
     @property
     def size(self):
-        """
-        getter for the size property
-        """
+        """Method to return the value stored in the private variable 'size'"""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """
-        setter for the size property
-        """
-        if self.__validate_size(value):
-            self.__size = value
-
-    def area(self):
-        """
-        calculates the area of the square
-        """
-        return self.__size ** 2
-
-    def my_print(self):
-        """
-        prints the square using '#' characters
-        """
-        i = 0
-        for i in range(0, self.__size):
-            j = 0
-            for j in range(0, self.__size):
-                print("#", end='')
-            print()
-
-    def __validate_size(self, size):
-        """
-        validates the size, checking for errors
-        """
-        if type(size) != int:
+        """Method which sets a new value to the 'size' instace/attribute"""
+        if type(value) != int:
             raise TypeError("size must be an integer")
-        elif size < 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
         else:
-            return True
-        return False
+            self.__size = value
+
+    def my_print(self):
+        """Method that draws a square with '#' to the Stdout"""
+        if self.__size == 0:
+            print()
+        for i in range(self.__size):
+            for x in range(self.__size):
+                print("#", end="")
+            print()
