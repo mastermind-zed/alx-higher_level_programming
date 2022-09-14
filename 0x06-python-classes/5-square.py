@@ -32,24 +32,22 @@ class Square:
 
     def area(self):
         """
-             area of the square.
+        calculates the area of the square
         """
-        return self.__size * self.__size
+        return self.__size ** 2
 
     def my_print(self):
         """
-            prints the square with character #
+        prints the square using '#' characters
         """
-        if self.__size == 0:
+        i = 0
+        for i in range(0, self.__size):
+            j = 0
+            for j in range(0, self.__size):
+                print("#", end='')
             print()
-        else:
-            x, y = 0, 0
-            for x in range(self.__size):
-                for y in range(self.__size):
-                    print("#", end="")
-                print()
 
-     def __validate_size(self, size):
+    def __validate_size(self, size):
         """
         validates the size, checking for errors
         """
