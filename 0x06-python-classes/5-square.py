@@ -13,7 +13,8 @@ class Square:
 
     @property
     def size(self):
-        """ getter function for private attribute size.
+        """ 
+        getter function for private attribute size.
         """
         return self.__size
 
