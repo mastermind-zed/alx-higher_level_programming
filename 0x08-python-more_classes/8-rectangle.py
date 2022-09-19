@@ -8,6 +8,9 @@ class Rectangle:
     """
      class Rectangle that defines a rectangle by: (based on 7-rectangle.py
     """
+    number_of_instances = 0
+    print_symbol = '#'
+
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
