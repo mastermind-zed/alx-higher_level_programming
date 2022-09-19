@@ -1,9 +1,13 @@
 #!/usr/bin/python3
-""" String representation """
+""" 
+String representation 
+"""
 
 
 class Rectangle:
-    """  class Rectangle that defines a rectangle by: (based on 2-rectangle.py """
+    """
+    class Rectangle that defines a rectangle by: (based on 2-rectangle.py 
+    """
     def __init__(self, width=0, height=0):
         """Initializes a rectangle
         """
