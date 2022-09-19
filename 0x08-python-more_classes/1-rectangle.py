@@ -3,10 +3,20 @@
 
 
 class Rectangle:
-    """ a class Rectangle that defines a rectangle by: (based on 0-rectangle.py """
+    """
+        class Rectangle defines a rectangle
+        Attributes:
+            width (int): width of the rectangle
+            height (int): height of the rectangle
+    """
     def __init__(self, width=0, height=0):
-        """ defining a rectangle """
-         if isinstance(width, int):
+        """
+            initialises the instances
+            Args:
+                width (int): width of the rectangle
+                height (int): height of the rectangle
+        """
+        if isinstance(width, int):
             if width < 0:
                 raise ValueError("width must be >= 0")
             self.__width = width
@@ -22,13 +32,20 @@ class Rectangle:
 
     @property
     def width(self):
-        """setter of private instance width attribute"""
+        """
+            getter function for private attribute width
+            Retruns: width
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """setter of private instance width attribute"""
-        if type(value) is not int:
+        """
+            setter function for private attribute width
+            Args:
+                value (int): new width value
+        """
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
@@ -36,12 +53,19 @@ class Rectangle:
 
     @property
     def height(self):
-        """setter of private instance height attribute"""
+        """
+            getter function for private attribute height
+            Returns: height
+        """
         return self.__height
 
     @height.setter
     def height(self, value):
-        """setter of private instance height attribute"""
+        """
+            setter function for the private attribute height
+            Args:
+                value (int): new height value
+        """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
