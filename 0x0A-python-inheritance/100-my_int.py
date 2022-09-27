@@ -3,15 +3,10 @@
 
 
 class MyInt(int):
-    """ class MyInt that inherits from int """ 
-    def __init__(self, value):
-        self.num = value
-
     def __eq__(self, other):
-        return self.num != other
+        """ Override equals, inverting it. """
+        return int(self) != int(other)
 
     def __ne__(self, other):
-        return self.num == other
-
-    def __str__(self):
-        return (str(self.num))
+        """ Override not-equals, inverting it."""
+        return int(self) == int(other)
