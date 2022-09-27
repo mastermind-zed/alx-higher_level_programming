@@ -12,3 +12,6 @@ class MyInt(int):
 
     def __ne__(self, other):
         return self.num == other
+
+    def __str__(self):
+        return (str(self.num))
