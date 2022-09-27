@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" class or inherit """
 
 
 def is_kind_of_class(obj, a_class):
