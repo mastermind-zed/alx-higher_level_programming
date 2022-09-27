@@ -14,13 +14,17 @@ class Square(Rectangle):
             __init__ - initialises the square
     """
     def __init__(self, size):
-        """ initialises Square """
+        """
+            initialises Square
+        """
         self.integer_validator("size", size)
 
         self.__size = size
 
     def area(self):
-        """ area of square """
+        """
+            Returns the area of square
+        """
         area = self.__size * self.__size
         return area
 
