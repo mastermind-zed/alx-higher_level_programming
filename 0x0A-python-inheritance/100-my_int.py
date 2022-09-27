@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-""" my int """
 
 
 class MyInt(int):
+    """ class MyInt that inherits from int """
+
     def __eq__(self, other):
-        """ Override equals, inverting it. """
-        return int(self) != int(other)
+        return (int(self) != other)
 
     def __ne__(self, other):
-        """ Override not-equals, inverting it."""
-        return int(self) == int(other)
+        return (int(self) == other)
