@@ -1,10 +1,17 @@
 #!/usr/bin/python3
-"""my int"""
+""" my int """
 
 
-def add_attribute(clss, atrb, val):
+class MyInt(int):
     """ class MyInt that inherits from int """
-    if "__dict__" in dir(clss):
-        setattr(clss, atrb, val)
-    else:
-        raise TypeError("can't add new attribute")
+    def __init__(self, number):
+        self.number = number
+
+    def __ne__(self, value):
+        return (self.number == value)
+
+    def __eq__(self, value):
+        return (self.number != value)
+
+    def __str__(self):
+        return (str(self.number))
