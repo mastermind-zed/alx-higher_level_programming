@@ -10,6 +10,7 @@ def print_size_and_codes(size, stat_codes):
         if v:
             print("{:s}: {:d}".format(k, v))
 
+
 def parse_stdin_and_compute():
     size = 0
     lines = 0
@@ -29,5 +30,6 @@ def parse_stdin_and_compute():
         raise
 
     print_size_and_codes(size, stat_codes)
+
 
 parse_stdin_and_compute() 
