@@ -3,20 +3,9 @@
 
 
 class Student:
-    """
-        A class students that defines a student by:
-        Attributes:
-            first_name (str): name of student.
-            last_name (str): name of student.
-            age (int): age of student.
-        Methods:
-            __init__ - initializes the Student instance.
-            to_json - retrieves dictionary repr of Student instance.
-    """
+    """ class Student that defines a student by: (based on 9-student.py) """
     def __init__(self, first_name, last_name, age):
-        """
-            Initialises Student instance.
-        """
+        """ student instance  initialization """
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
