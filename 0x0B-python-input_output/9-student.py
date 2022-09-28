@@ -1,0 +1,15 @@
+#!/usr/bin/pytho3
+""" Student to JSON """
+
+
+class Student:
+    """ Student that defines a student """
+    def __init__(self, first_name, last_name, age):
+        """ student instance  initialization """
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+
+    def to_json(self):
+        """ retrieves a dictionary representation of Student. """
+        return self.__dict__
