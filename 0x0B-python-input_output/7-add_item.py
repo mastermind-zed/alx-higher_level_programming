@@ -1,22 +1,20 @@
 #!/usr/bin/python3
-""" Load, add, save """
+""" load, add, save """
+
+import sys
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 
-from sys import argv
- 
+if __name__ == "__main__":
 
-save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
-load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
+    filename = "add_item.json"
 
-filename = "add_item.json"
+    try:
+        arg_list = load_from_json_file(filename)
+    except Exception:
+        arg_list = []
 
-try:
-    j_list = load_from_json_file(filename)
-
-except:
-    j_list = []
-
-for arguments in argv[1:]:
-    j_list.append(arguments)
-
-save_to_json_file(j_list, filename)
+    for arg in sys.argv[1:]:
+        arg_list.append(arg)
+    save_to_json_file(arg_list, filename)
