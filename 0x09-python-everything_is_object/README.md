@@ -118,4 +118,4 @@ Answer with Yes or No.
 ---
 
 ## Author
-* **Adjei Samuel** - [mastermind-zed](https://github.com/kai-dg)
+* **Adjei Samuel** - [mastermind-zed](https://github.com/mastermind-zed)
