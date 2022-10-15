@@ -118,4 +118,4 @@ Answer with Yes or No.
 ---
 
 ## Author
-* **Derrick Gee** - [kai-dg](https://github.com/kai-dg)
+* **Adjei Samuel** - [kai-dg](https://github.com/kai-dg)
