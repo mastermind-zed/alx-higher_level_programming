@@ -70,4 +70,5 @@ What are, when and how to use isinstance, issubclass, type and super built-in fu
 ---
 
 ## Author
-* **Adjei Samuel** - [mastermind-zed](https://github.com/kai-dg)
+* **Adjei Samuel** - [mastermind-zed](https://github.com/mastermind-zed
+* )
