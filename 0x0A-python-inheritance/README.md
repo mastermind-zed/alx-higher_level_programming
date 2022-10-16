@@ -70,4 +70,4 @@ What are, when and how to use isinstance, issubclass, type and super built-in fu
 ---
 
 ## Author
-* **Derrick Gee** - [kai-dg](https://github.com/kai-dg)
+* **Adjei Samuel** - [kai-dg](https://github.com/kai-dg)
