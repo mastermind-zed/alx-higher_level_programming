@@ -2,7 +2,6 @@
 ==============================
 
 -   By Guillaume
--   Weight: 1
 -   **Manual QA review must be done** (request it when you are done with the project)
 -   QA review fully automated.
 
