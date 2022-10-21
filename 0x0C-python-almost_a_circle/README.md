@@ -2,7 +2,6 @@
 ==============================
 
 -   By Guillaume
--   QA review fully automated.
 
 Background Context
 ------------------
