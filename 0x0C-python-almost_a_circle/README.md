@@ -3,7 +3,6 @@
 
 -   By Guillaume
 -   Weight: 1
--   Checker will be released at 01-03-2022 01:12 AM
 -   **Manual QA review must be done** (request it when you are done with the project)
 -   QA review fully automated.
 
