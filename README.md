@@ -44,4 +44,4 @@ ALX's curriculum for high-level programming. These projects are meant to help us
 
 ## Author
  Adjei Samuel - [mastermind-zed](https://github.com/mastermind-zed)
-Mo
+
