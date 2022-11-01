@@ -39,7 +39,5 @@ ALX's curriculum for high-level programming. These projects are meant to help us
 
 ### [0x0F. Python - Object-relational mapping](./0x0F-python-object_relational_mapping)
 
----
-
 ## Author
  Adjei Samuel - [mastermind-zed](https://github.com/mastermind-zed)
