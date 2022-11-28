@@ -1,29 +1,14 @@
 #!/usr/bin/node
+const mySq = Math.floor(Number(process.argv[2]));
+let rows = 'X';
 
-const process = require('process');
-let build = '';
-let failed = 'Missing size';
-let num;
-let i;
-let j;
-
-if (process.argv.length > 2) {
-  num = parseInt(process.argv[2]);
-  if (isNaN(num)) {
-    build = failed;
-  } else {
-    for (i = 0; i < num; i++) {
-      if (i > 0) {
-        build += '\n';
-      }
-      for (j = 0; j < num; j++) {
-        build += 'X';
-      }
-    }
-  }
+if (isNaN(mySq)) {
+  console.log('Missing size');
 } else {
-  build = failed;
-}
-if (build !== '') {
-  console.log(build);
+  for (let i = 0; i < mySq - 1; i++) {
+    rows += 'X';
+  }
+  for (let j = 0; j < mySq; j++) {
+    console.log(rows);
+  }
 }
