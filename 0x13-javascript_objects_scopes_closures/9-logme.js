@@ -11,4 +11,3 @@ const gen = generator();
 exports.logMe = function (item) {
   console.log(gen.next().value + ': ' + item);
 };
-
