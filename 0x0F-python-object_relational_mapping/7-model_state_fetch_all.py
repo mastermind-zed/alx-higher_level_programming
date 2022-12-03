@@ -1,17 +1,28 @@
 #!/usr/bin/python3
 """ Entry Point """
 
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
+import sys
+from model_state import Base, State
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
 
-Base = declarative_base()
 
+if __name__ == "__main__":
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+                           sys.argv[1], sys.argv[2], sys.argv[3]),
+                           pool_pre_ping=True)
 
-class State(Base):
-    """state class for use with sqlalchemy
-        -> inherits from sqlalchemy declarative_base
-    """
-    __tablename__ = 'states'
+    Session = sessionmaker(bind=engine)
+    Base.metadata.create_all(engine)
 
-    id = Column(Integer, primary_key=True)
-    name = Column(String(128), nullable=False)
+    # create a session
+    session = Session()
+
+    # extract all states
+    states = session.query(State).order_by(State.id).all()
+
+    # print all states
+    for state in states:
+        print("{}: {}".format(state.id, state.name))
+
+    session.close()
