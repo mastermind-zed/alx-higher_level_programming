@@ -1,25 +1,20 @@
 #!/usr/bin/python3
 """ Entry Point """
 
-from model_state import Base, State
-
+import sys
+from venv import create
+from sqlalchemy import create_engine, true
+from sqlalchemy.orm import sessionmaker
+from model_state import State
 from model_city import City
 
-from sqlalchemy.orm import sessionmaker
+if __name__ == "__main__":
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(
+        sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
+    session_maker = sessionmaker(bind=engine)
+    session = session_maker()
 
-from sqlalchemy import (create_engine)
-
-import sys
-
-
-if __name__ == '__main__':
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                           .format(sys.argv[1], sys.argv[2], sys.argv[3]))
-    # create custom session object class from database engine
-    Session = sessionmaker(bind=engine)
-    # create instance of new custom session class
-    session = Session()
-    for result in session.query(State.name, City.id, City.name)\
-            .join(City, City.state_id == State.id)\
+    for city, state in session.query(City, State)\
+        .filter(City.state_id == State.id)\
             .order_by(City.id):
-        print("{}: ({}) {}".format(result[0], result[1], result[2]))
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
