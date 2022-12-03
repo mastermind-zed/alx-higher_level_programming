@@ -1,25 +1,27 @@
 #!/usr/bin/python3
-""" script that lists all states with a name """
+""" A script that lists all states from the database """
 
 
-import MySQLdb
 import sys
+import MySQLdb
 
 
 if __name__ == '__main__':
-    args = sys.argv
-    username = args[1]
-    password = args[2]
-    data = args[3]
-    db = MySQLdb.connect(host='localhost', user=username,
-                         passwd=password, db=data,
+    db = MySQLdb.connect(user=sys.argv[1],
+                         passwd=sys.argv[2],
+                         db=sys.argv[3],
+                         host='localhost',
+                         charset="utf8",
                          port=3306)
-    cur = db.cursor()
-    num_rows = cur.execute('''
-            SELECT * FROM states
-            WHERE states.name LIKE 'N%'
-            ORDER BY states.id
-            ''')
-    rows = cur.fetchall()
-    for row in rows:
+
+    cursor = db.cursor()
+
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+
+    data = cursor.fetchall()
+
+    for row in data:
         print(row)
+
+    cursor.close()
+    db.close()
