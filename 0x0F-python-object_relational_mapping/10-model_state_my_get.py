@@ -1,25 +1,22 @@
-#!/usr/bin/node
+#!/usr/bin/python3
 """ Entry Point """
 
-import sys
-from model_state import Base, State
+import sqlalchemy
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import (create_engine)
+from sys import argv
+from model_state import Base, State
 
-if __name__ == '__main__':
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                           .format(sys.argv[1], sys.argv[2], sys.argv[3]))
-    state_name = sys.argv[4]
-    # create custom session object class from database engine
-    Session = sessionmaker(bind=engine)
-    # create instance of new custom session class
+if __name__ == "__main__":
+    eng = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(argv[1],
+                                                                    argv[2],
+                                                                    argv[3]))
+    Base.metadata.create_all(eng)
+    Session = sessionmaker(bind=eng)
     session = Session()
-    # find states matching state_name
-    states = session.query(State)\
-                    .filter(State.name == state_name)\
-                    .order_by(State.id)
-    if (states is not None and states.count() > 0):
-        for state in states:
-            print('{}'.format(state.id))
+    state = session.query(State).filter_by(name=argv[4]).first()
+    if state is not None:
+        print(str(state.id))
     else:
-        print('Not found')
+        print("Not found")
+    session.close()
