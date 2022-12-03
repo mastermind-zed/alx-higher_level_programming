@@ -1,4 +1,9 @@
-#!/usr/bin/node
+#!/usr/bin/python3
+
+"""
+    A script that lists all states from the database hbtn_0e_0_usa
+    Username, password and database names are given as user args
+"""
 
 
 import sys
