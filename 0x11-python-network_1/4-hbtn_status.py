@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-""" 
-    Entry Point 
 """
-from requests import get
+    Entry Point
+"""
+
+import requests
 
 if __name__ == '__main__':
-    res = get('https://alx-intranet.hbtn.io/status')
-    print('Body response:')
-    print('\t- type:', type(res.text))
-    print('\t- content:', res.text)
+    r = requests.get('https://alx-intranet.hbtn.io/status')
+    print("Body response:")
+    print("\t- type: {}".format(type(r.text)))
+    print("\t- content: {}".format(r.text))
