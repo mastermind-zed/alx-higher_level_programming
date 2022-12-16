@@ -2,6 +2,7 @@
 """
     Entry Point 
 """
+
 import requests
 import sys
 
