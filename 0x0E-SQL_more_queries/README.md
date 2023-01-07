@@ -1,1 +1,1 @@
-0x0E-SQL_more
+0x0E-SQL
