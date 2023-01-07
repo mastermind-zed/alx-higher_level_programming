@@ -3,7 +3,6 @@
 
 -   By Guillaume
 -   Weight: 1
--   O
 -   QA review fully automated.
 
 #### In a nutshell...
