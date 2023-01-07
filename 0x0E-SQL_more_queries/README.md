@@ -3,7 +3,7 @@
 
 -   By Guillaume
 -   Weight: 1
--   O - started 02-02-2022
+-   O
 -   QA review fully automated.
 
 #### In a nutshell...
