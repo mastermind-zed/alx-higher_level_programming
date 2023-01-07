@@ -3,7 +3,7 @@
 
 -   By Guillaume
 -   Weight: 1
--   Ongoing second chance project - started 02-02-2022, must end by 02-04-2022 (in about 19 hours)
+-   O - started 02-02-2022, must end by 02-04-2022 (in about 19 hours)
 -   QA review fully automated.
 
 #### In a nutshell...
