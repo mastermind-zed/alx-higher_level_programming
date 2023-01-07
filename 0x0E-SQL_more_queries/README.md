@@ -10,7 +10,6 @@
 -   **Auto QA review:** 0.0/104 mandatory & 0.0/24 optional
 -   **Altogether:**  **0.0%**
     -   Mandatory: 0.0%
-    -   Optional: 0.0%
 
 ![](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/66988091.jpg)
 
